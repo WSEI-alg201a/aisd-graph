@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace kmolenda.aisd.GraphLib
 {
@@ -9,6 +10,21 @@ namespace kmolenda.aisd.GraphLib
     /// <typeparam name="E">edge - typ reprezentujący krawędź</typeparam>
     public interface IGraph<V, E> where E : IEdge<V>
     {
+        // dodaje węzeł do grafu
+        // jeśli węzeł już istnieje, nadpisuje
+        bool AddVertex(V vertex);
 
+        // sprawdza, czy węzeł jest w grafie
+        bool ContainsVertex(V vertex);
+
+        // zwraca kolekcję węzłów połączonych z podanym
+        IEnumerable<V> Neighbours(V vertex);
+
+        // zwraca kolekcję wszystkich węzłów
+        IEnumerable<V> Vertices { get; }
+
+        // dodaje krawędź do grafu
+        // jeśli węzłów `from` lub `to` nie ma, nie dodaje, zwraca false
+        bool AddEdge(V from, V to);
     }
 }
