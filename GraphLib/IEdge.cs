@@ -8,7 +8,7 @@ namespace kmolenda.aisd.GraphLib
     /// <typeparam name="V">vertex - typ węzła</typeparam>
     public interface IEdge<V>
     {
-        V From {get;}
-        V To {get;}
+        V From {get; set;}
+        V To {get; set;}        
     }
 }
