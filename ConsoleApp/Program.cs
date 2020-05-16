@@ -15,7 +15,7 @@ namespace ConsoleApp
         {
             var vertices = new[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
 
-            EdgeNonWeighted<int>[] edges = { (1, 2), (1, 3), (2, 4), (3,5), (3,6), (4,7), (5,7), (5,8), (5,6), (8,9), (9,10) };
+            EdgeNonWeighted<int>[] edges = { (1, 1), (1, 2), (1, 3), (2, 4), (3,5), (3,6), (4,7), (5,7), (5,8), (5,6), (8,9), (9,10) };
             
             var graph = new GraphNonWeightedAdjacencyList<int, EdgeNonWeighted<int> >(vertices, edges );
             Console.WriteLine( graph.ToString<int>() );

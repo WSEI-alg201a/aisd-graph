@@ -4,14 +4,15 @@ using System.Collections.Generic;
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// Unidirected, non weighted graph implemented as adjacency list
+    /// Unidirected, strict (without multi-edges), non-weighted graph, implemented as adjacency list. 
+    /// Self-connections allowed.
     /// </summary>
     /// <typeparam name="V">type of vertex</typeparam>
-    /// <typeparam name="E">type of edge (reference type)</typeparam>
+    /// <typeparam name="E">type of edge</typeparam>
     public class GraphNonWeightedAdjacencyList<V, E> : IGraph<V, IEdge<V>> 
-        where E : IEdge<V>, new()
+        where E : IEdge<V>
     {
-        // Dictionary: { 1 -> {2, 3}, 2 -> {1}, 3 -> {1} }
+        // Dictionary: { 1 -> {1, 2, 3}, 2 -> {1}, 3 -> {1} }
         public Dictionary<V, HashSet<V>> AdjacencyList { get; } 
                                     = new Dictionary<V, HashSet<V>>();
 
@@ -26,7 +27,7 @@ namespace kmolenda.aisd.GraphLib
         public GraphNonWeightedAdjacencyList(IEnumerable<V> vertices, IEnumerable<E> edges)
         {
             foreach (var vertex in vertices) AddVertex(vertex);
-            foreach (var edge in edges) AddEdge(edge.From, edge.To);
+            foreach (var edge in edges) AddEdge(edge);
         }
 
         #endregion
@@ -43,7 +44,7 @@ namespace kmolenda.aisd.GraphLib
             return true;
         }
 
-        public bool AddEdge(V from, V to) => AddEdge( new E(){From = from, To = to} );
+        //public bool AddEdge(V from, V to) => AddEdge( new E(){From = from, To = to} );
 
         public bool AddEdge(IEdge<V> edge)
         {

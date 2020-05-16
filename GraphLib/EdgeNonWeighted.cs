@@ -20,8 +20,10 @@ namespace kmolenda.aisd.GraphLib
             (From, To) = value;
         }
 
+        #region conversions
         public static implicit operator ValueTuple<V,V>(EdgeNonWeighted<V> e) => (e.From, e.To);
         public static implicit operator EdgeNonWeighted<V>(ValueTuple<V,V> value) => new EdgeNonWeighted<V>(value);
+        #endregion
 
 
         public override string ToString() => $"({From}, {To})";

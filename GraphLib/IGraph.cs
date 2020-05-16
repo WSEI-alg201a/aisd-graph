@@ -24,10 +24,6 @@ namespace kmolenda.aisd.GraphLib
         IEnumerable<V> Vertices { get; }
 
         // dodaje krawędź do grafu
-        // jeśli węzłów `from` lub `to` nie ma, nie dodaje, zwraca false
-        bool AddEdge(V from, V to);
-
-        // dodaje krawędź do grafu
         bool AddEdge(E edge);
 
         // zwraca kolekcję wszystkich krawędzi
