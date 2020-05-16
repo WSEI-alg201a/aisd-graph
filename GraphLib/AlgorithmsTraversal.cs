@@ -65,7 +65,7 @@ namespace kmolenda.aisd.GraphLib
 
         // Funkcja zwracająca funkcję, któa zwraca najkrószą ścieżkę (w sensie liczby krawędzi)
         // między wskazanymi wezłami
-        // Użycie:  `var path = graph.ShortestPathFunc<int>(start: 1)(4);`
+        // Użycie:  `var path = graph.ShortestPathFunc<int>(start: 1)(4);` dla węzłów typu `int`.
         // Wykorzystuje koncepcję BFS. Wychodząc od początkowego wierzchołka, zapamiętuje
         // w słowniku `previous` jak dojść do każdego węzła. aby znaleźć najkrószą ścieżkę
         // wyszukujemy poprzedni węzeł dla węzła docelowego i kontynuujemy przeglądanie

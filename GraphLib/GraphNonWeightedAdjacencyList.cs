@@ -4,10 +4,10 @@ using System.Collections.Generic;
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// Unideirection
+    /// Unidirected, non weighted graph implemented as adjacency list
     /// </summary>
-    /// <typeparam name="V"></typeparam>
-    /// <typeparam name="E"></typeparam>
+    /// <typeparam name="V">type of vertex</typeparam>
+    /// <typeparam name="E">type of edge (reference type)</typeparam>
     public class GraphNonWeightedAdjacencyList<V, E> : IGraph<V, IEdge<V>> 
         where E : IEdge<V>, new()
     {
