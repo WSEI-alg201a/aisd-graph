@@ -67,9 +67,6 @@ namespace kmolenda.aisd.GraphLib
             return shortestPath;
         } // koniec ShortestPathFunc
 
-        // Funkcja zwracająca sekwencję węzłów będacych najkrószą ścieżką (w sensie liczby krawędzi)
-        // między wskazanymi węzłami
-        
         /// <summary>
         /// Zwraca iterator, który zwraca kolejne węzły będące najkrótszą ścieżką między węzłami start i end
         /// </summary>
