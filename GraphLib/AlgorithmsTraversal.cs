@@ -135,18 +135,7 @@ namespace kmolenda.aisd.GraphLib
         // między wskazanymi węzłami
          public static IEnumerable<V> ShortestPath<V>(this IGraph<V, IEdge<V>> graph, V start, V end)
             => graph.ShortestPathFunc<V>(start)(end);
-
-        
-        public static string ToString<V>(this IGraph<V, IEdge<V>> graph)
-        {
-            var wynik = new System.Text.StringBuilder("{");
-            foreach (var vertex in graph.Vertices)
-            {
-                wynik.Append($" {vertex}->{{{string.Join(", ", graph.Neighbours(vertex))}}};"); //To output a { you use {{ and to output a } you use }}.
-            }
-            wynik[wynik.Length - 1] = ' ';
-            return wynik.Append('}').ToString();
-        }
+            
 
     }
 }
