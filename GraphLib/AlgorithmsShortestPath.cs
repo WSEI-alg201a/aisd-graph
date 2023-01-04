@@ -9,14 +9,8 @@ namespace kmolenda.aisd.GraphLib
     public static class AlgorithmsShortestPath
     {
  
-        // Wykorzystuje koncepcję BFS. Wychodząc od początkowego wierzchołka, zapamiętuje
-        // w słowniku `previous` jak dojść do każdego węzła. aby znaleźć najkrószą ścieżkę
-        // wyszukujemy poprzedni węzeł dla węzła docelowego i kontynuujemy przeglądanie
-        // wszystkich poprzednich węzłów, aż dotrzemy do węzła początkowego.
-        // Otrzymana ścieżka jest w kolejności odwrotnej, dlatego `Reverse();`
-
         /// <summary>
-        /// Zwraca funkcję, która zwraca najkrótszą ścieżkę między wskazanymi węzłami (w sensie liczby krawędzi)
+        /// Zwraca funkcję, która zwraca najkrótsze ścieżki od węzła start (najkrótsze, w sensie liczby krawędzi)
         /// </summary>
         /// <remarks>
         /// Wykorzystuje dowolną implementację grafu, opartą na interfejsie `IGraph`.
@@ -30,7 +24,7 @@ namespace kmolenda.aisd.GraphLib
         /// <param name="graph">graf, w dowolnej implementacji</param>
         /// <param name="start">wierzchołek od którego rozpoczynane jest przeglądanie</param>
         /// <typeparam name="V">vertex - typ wierzchołka</typeparam>
-        /// <returns>Funkcję, która dla określonego węzła zwraca ścieżkę</returns>
+        /// <returns>Funkcję, która dla określonego węzła zwraca najkrótszą ścieżkę prowadzącą od węzła start</returns>
         public static Func<V, IEnumerable<V>> ShortestPathFunc<V>(this IGraph<V, IEdge<V>> graph, V start)
         {
             var previous = new Dictionary<V, V>();
