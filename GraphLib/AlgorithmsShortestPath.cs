@@ -69,7 +69,17 @@ namespace kmolenda.aisd.GraphLib
 
         // Funkcja zwracająca sekwencję węzłów będacych najkrószą ścieżką (w sensie liczby krawędzi)
         // między wskazanymi węzłami
-         public static IEnumerable<V> ShortestPath<V>(this IGraph<V, IEdge<V>> graph, V start, V end)
+        
+        /// <summary>
+        /// Zwraca iterator, który zwraca kolejne węzły będące najkrótszą ścieżką między węzłami start i end
+        /// </summary>
+        /// <remarks>Jest opakowaniem funkcji ShortestPathFunc</remarks>
+        /// <param name="graph">graf, dowolna implementacja</param>
+        /// <param name="start">wierzchołek początkowy</param>
+        /// <param name="end">wierzchołek końcowy</param>
+        /// <typeparam name="V">vertex - typ wierzchołka</typeparam>
+        /// <returns>Zwraca iterator, który zwraca kolejne węzły będące najkrótszą ścieżką między węzłami start i end</returns>
+        public static IEnumerable<V> ShortestPath<V>(this IGraph<V, IEdge<V>> graph, V start, V end)
             => graph.ShortestPathFunc<V>(start)(end);
             
     }
