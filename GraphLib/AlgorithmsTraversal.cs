@@ -3,8 +3,19 @@ using System.Collections.Generic;
 
 namespace kmolenda.aisd.GraphLib
 {
+    /// <summary>
+    /// Dostarcza metody przeglądania grafu: DFS i BFS
+    /// </summary>
     public static class AlgorithmsTraversal
     {
+        /// <summary>
+        /// Przegląda graf metodą DFS
+        /// </summary>
+        /// <remarks>Wykorzystuje dowolną implementację grafu, opartą na interfejsie `IGraph`</remarks>
+        /// <param name="graph">implementacja grafu</param>
+        /// <param name="start">wierzchołek od którego rozpoczyna się przeglądanie</param>
+        /// <typeparam name="V">vertex - typ wierzchołka</typeparam>
+        /// <returns>Zwraca iterator odwiedzanych wierzchołków</returns>        
         public static IEnumerable<V> TraverseDepthFirst<V>(this IGraph<V,IEdge<V>> graph, V start)
         {
             var visited = new HashSet<V>();
@@ -34,6 +45,14 @@ namespace kmolenda.aisd.GraphLib
             yield break;
         }
 
+        /// <summary>
+        /// Przegląda graf metodą BFS
+        /// </summary>
+        /// <remarks>Wykorzystuje dowolną implementację grafu, opartą na interfejsie `IGraph`</remarks>
+        /// <param name="graph">implementacja grafu</param>
+        /// <param name="start">wierzchołek od którego rozpoczyna się przeglądanie</param>
+        /// <typeparam name="V">vertex - typ wierzchołka</typeparam>
+        /// <returns>Zwraca iterator odwiedzanych wierzchołków</returns>     
         public static IEnumerable<V> TraverseBreadthFirst<V>(this IGraph<V,IEdge<V>> graph, V start)
         {
             var visited = new HashSet<V>();
@@ -63,9 +82,9 @@ namespace kmolenda.aisd.GraphLib
             yield break;
         }
 
-        // Funkcja zwracająca funkcję, któa zwraca najkrószą ścieżkę (w sensie liczby krawędzi)
+        // Funkcja zwracająca funkcję, która zwraca najkrószą ścieżkę (w sensie liczby krawędzi)
         // między wskazanymi wezłami
-        // Użycie:  `var path = graph.ShortestPathFunc<int>(start: 1)(4);` dla węzłów typu `int`.
+        // Użycie: `var path = graph.ShortestPathFunc<int>(start: 1)(4);` dla węzłów typu `int`.
         // Wykorzystuje koncepcję BFS. Wychodząc od początkowego wierzchołka, zapamiętuje
         // w słowniku `previous` jak dojść do każdego węzła. aby znaleźć najkrószą ścieżkę
         // wyszukujemy poprzedni węzeł dla węzła docelowego i kontynuujemy przeglądanie

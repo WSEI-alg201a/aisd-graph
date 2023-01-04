@@ -1,6 +1,5 @@
 ﻿using System;
 using kmolenda.aisd.GraphLib;
-using System.Linq;
 
 namespace ConsoleApp
 {
