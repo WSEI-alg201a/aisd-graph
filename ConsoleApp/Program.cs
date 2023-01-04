@@ -17,9 +17,9 @@ namespace ConsoleApp
             EdgeNonWeighted<int>[] edges = { (1, 1), (1, 2), (1, 3), (2, 4), (3,5), (3,6), (4,7), (5,7), (5,8), (5,6), (8,9), (9,10) };
             
             var graph = new GraphNonWeightedAdjacencyList<int, EdgeNonWeighted<int> >(vertices, edges );
-            Console.WriteLine( graph.ToString<int>() );
+            Console.WriteLine( "Graf: " + graph.ToString<int>() );
 
-                        string s = "Traverse depth-first:   ";
+            string s = "Traverse depth-first:   ";
             foreach( var vertex in graph.TraverseDepthFirst(start: 1) )
                 s += vertex + " ";
             Console.WriteLine(s);
@@ -33,6 +33,7 @@ namespace ConsoleApp
             var path = graph.ShortestPath(start: a, end: b);
             Console.WriteLine( $"Shortest path from {a} to {b}: {string.Join(", ", path)}" );
 
+            Console.WriteLine( $"All shortest paths from {a} to all vertices:" );
             foreach( var vertex in graph.Vertices )
             {
                 var fun = graph.ShortestPathFunc(start: a);
