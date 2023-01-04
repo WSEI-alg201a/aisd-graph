@@ -3,7 +3,7 @@ using System;
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// Implementacja krawędzi grafu nieważonego
+    /// Implementacja krawędzi grafu skierowanego, nieważonego
     /// </summary>
     /// <typeparam name="V">vertex - typ wierzchołka grafu</typeparam>
     public class EdgeNonWeighted<V> : IEdge<V>

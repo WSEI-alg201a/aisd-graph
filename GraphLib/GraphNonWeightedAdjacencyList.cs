@@ -9,14 +9,14 @@ namespace kmolenda.aisd.GraphLib
     /// </summary>
     /// <typeparam name="V">type of vertex</typeparam>
     /// <typeparam name="E">type of edge</typeparam>
-    public class GraphNonWeightedAdjacencyList<V, E> : IGraph<V, IEdge<V>> 
+    public class GraphNonWeightedAdjacencyList<V, E> : IGraph<V, IEdge<V>>
         where E : IEdge<V>
     {
         // Dictionary: { 1 -> {1, 2, 3}, 2 -> {1}, 3 -> {1} }
-        public Dictionary<V, HashSet<V>> AdjacencyList { get; } 
+        public Dictionary<V, HashSet<V>> AdjacencyList { get; }
                                     = new Dictionary<V, HashSet<V>>();
 
-        #region Constructors
+        #region === Constructors ===
         public GraphNonWeightedAdjacencyList() { }
 
         public GraphNonWeightedAdjacencyList(int initialSize)
@@ -29,15 +29,14 @@ namespace kmolenda.aisd.GraphLib
             foreach (var vertex in vertices) AddVertex(vertex);
             foreach (var edge in edges) AddEdge(edge);
         }
+        #endregion === Constructors ===
 
-        #endregion
 
-
-        #region Add vertices, edges
+        #region === Add vertices, edges ===
 
         public bool AddVertex(V vertex)
         {
-            if( ContainsVertex(vertex) )
+            if (ContainsVertex(vertex))
                 return false;
 
             AdjacencyList[vertex] = new HashSet<V>();
