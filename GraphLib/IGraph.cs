@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// 
+    /// Definiuje elementarną koncepcję grafu
     /// </summary>
     /// <typeparam name="V">vertex - typ reprezentujący węzeł</typeparam>
     /// <typeparam name="E">edge - typ reprezentujący krawędź</typeparam>
@@ -28,6 +27,5 @@ namespace kmolenda.aisd.GraphLib
 
         // zwraca kolekcję wszystkich krawędzi
         IEnumerable< E > Edges {get;}
-
     }
 }

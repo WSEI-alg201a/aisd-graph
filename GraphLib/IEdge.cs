@@ -1,9 +1,7 @@
-using System;
-
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// 
+    /// Definiuje koncepcję krawędzi grafu
     /// </summary>
     /// <typeparam name="V">vertex - typ węzła</typeparam>
     public interface IEdge<V>
