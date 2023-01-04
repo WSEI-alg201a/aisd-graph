@@ -2,6 +2,10 @@ using System;
 
 namespace kmolenda.aisd.GraphLib
 {
+    /// <summary>
+    /// Implementacja krawędzi grafu nieważonego
+    /// </summary>
+    /// <typeparam name="V">vertex - typ wierzchołka grafu</typeparam>
     public class EdgeNonWeighted<V> : IEdge<V>
     {
         public V From { get; set; }
@@ -25,8 +29,6 @@ namespace kmolenda.aisd.GraphLib
         public static implicit operator EdgeNonWeighted<V>(ValueTuple<V,V> value) => new EdgeNonWeighted<V>(value);
         #endregion
 
-
         public override string ToString() => $"({From}, {To})";
-
     }
 }
