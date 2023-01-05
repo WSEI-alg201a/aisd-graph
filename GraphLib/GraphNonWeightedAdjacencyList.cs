@@ -8,9 +8,9 @@ namespace kmolenda.aisd.GraphLib
     /// Self-connections allowed.
     /// </summary>
     /// <typeparam name="V">type of vertex</typeparam>
-    /// <typeparam name="E">type of edge</typeparam>
+    /// <typeparam name="E">type of edge, as class</typeparam>
     public class GraphNonWeightedAdjacencyList<V, E> : IGraph<V, IEdge<V>>
-        where E : IEdge<V>
+        where E : IEdge<V>, new()
     {
         // Dictionary: { 1 -> {1, 2, 3}, 2 -> {1}, 3 -> {1} }
         public Dictionary<V, HashSet<V>> AdjacencyList { get; }
@@ -43,7 +43,7 @@ namespace kmolenda.aisd.GraphLib
             return true;
         }
 
-        //public bool AddEdge(V from, V to) => AddEdge( new E(){From = from, To = to} );
+        public bool AddEdge(V from, V to) => AddEdge( new E(){From = from, To = to} );
 
         public bool AddEdge(IEdge<V> edge)
         {
@@ -60,7 +60,19 @@ namespace kmolenda.aisd.GraphLib
 
         public IEnumerable<V> Vertices => AdjacencyList.Keys;
 
-        public IEnumerable<IEdge<V>> Edges => throw new NotImplementedException();
+        public IEnumerable<IEdge<V>> Edges
+        {
+            get
+            {
+                foreach (var vertex in Vertices)
+                {
+                    foreach (var neighbour in Neighbours(vertex))
+                    {
+                        yield return  new E() {From = vertex, To = neighbour};
+                    }
+                }
+            }
+        } 
 
         public bool ContainsVertex(V vertex) => AdjacencyList.ContainsKey(vertex);
 

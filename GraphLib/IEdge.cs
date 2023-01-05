@@ -1,3 +1,5 @@
+using System;
+
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
@@ -7,6 +9,6 @@ namespace kmolenda.aisd.GraphLib
     public interface IEdge<V>
     {
         V From {get; set;}
-        V To {get; set;}        
+        V To {get; set;}     
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using kmolenda.aisd.GraphLib;
 
 namespace ConsoleApp
@@ -24,6 +25,11 @@ namespace ConsoleApp
 
             var graph = new GraphNonWeightedAdjacencyList<int, EdgeNonWeighted<int>>(vertices, edges);
             Console.WriteLine("Graf: " + graph.ToString<int>());
+
+            Console.WriteLine("Wierzchołki: " + string.Join(", ", graph.Vertices));
+
+            var edges2 = graph.Edges.ToList();
+            Console.WriteLine("Krawędzie: " + string.Join(", ", edges2));
 
             string s = "Traverse depth-first:   ";
             foreach (var vertex in graph.TraverseDepthFirst(start: 1))
