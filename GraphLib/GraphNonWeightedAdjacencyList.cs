@@ -56,7 +56,7 @@ namespace kmolenda.aisd.GraphLib
             return false;
         }
 
-        #endregion
+        #endregion === Add vertices, edges ===
 
         public IEnumerable<V> Vertices => AdjacencyList.Keys;
 
