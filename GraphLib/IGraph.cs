@@ -42,6 +42,10 @@ namespace kmolenda.aisd.GraphLib
         // jeśli którykolwiek z wierzchołków nie istnieje, zwraca `false` (nie zgłasza wyjątku)
         bool AddEdge(E edge);
 
+        // usuwa krawędź z grafu, zwraca `true`, jeśli krawędź została usunięta
+        // jeśli krawędź nie istnieje, zwraca `false` (nie zgłasza wyjątku)
+        bool RemoveEdge(E edge);
+
         // zwraca iterator/kolekcję wszystkich krawędzi
         IEnumerable< E > Edges {get;}
         #endregion === Edges ===
