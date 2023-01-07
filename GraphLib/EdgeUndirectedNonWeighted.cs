@@ -35,5 +35,10 @@ namespace kmolenda.aisd.GraphLib
         public static bool operator !=(EdgeUndirectedNonWeighted<V> left, EdgeUndirectedNonWeighted<V> right) 
             => !(left == right);
         #endregion === Equals, GetHashCode ===
+
+        #region === Conversions ===
+        public static implicit operator ValueTuple<V,V>(EdgeUndirectedNonWeighted<V> e) => (e.From, e.To);
+        public static implicit operator EdgeUndirectedNonWeighted<V>(ValueTuple<V,V> value) => new EdgeUndirectedNonWeighted<V>(value);
+        #endregion === Conversions ===
     }
 }
