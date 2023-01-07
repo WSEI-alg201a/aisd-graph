@@ -23,7 +23,8 @@ namespace kmolenda.aisd.GraphLib
         bool AddVertex(V vertex);
 
         // usuwa węzeł z grafu, zwraca `true`, jeśli węzeł został usunięty
-        // jeśli węzeł nie istnieje, zwraca `false` (nie zgłasza wyjątku)
+        // jeśli węzeł nie istnieje lub jest połączony krawędzią z innym węzełem, 
+        // nie usuwa i zwraca `false` (nie zgłasza wyjątku)
         bool RemoveVertex(V vertex);
 
         // sprawdza, czy węzeł jest w grafie
