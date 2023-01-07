@@ -4,11 +4,11 @@ using kmolenda.aisd.GraphLib;
 
 namespace ConsoleApp
 {
-    class Program
+    partial class Program
     {
         static void Main(string[] args)
         {
-            TestGraphUnidirectedNonWeightedAdjacencyList();
+            TestGraphUndirectedNonWeightedAdjacencyList();
         }
 
 
@@ -17,7 +17,7 @@ namespace ConsoleApp
         /// Etykietami wierzchołków są liczby całkowite.
         /// Wydruk grafu, przeglądanie grafu DFS i BFS, szukanie najkrótszej ścieżki.
         /// </summary>
-        static void TestGraphUnidirectedNonWeightedAdjacencyList()
+        static void TestGraphUndirectedNonWeightedAdjacencyList()
         {
             var vertices = new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
