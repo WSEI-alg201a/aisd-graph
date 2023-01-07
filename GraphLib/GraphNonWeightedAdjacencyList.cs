@@ -60,19 +60,15 @@ namespace kmolenda.aisd.GraphLib
 
         public IEnumerable<V> Vertices => AdjacencyList.Keys;
 
-        public IEnumerable<IEdge<V>> Edges
+        public IEnumerable<IEdge<V>> Edges 
         {
             get
             {
                 foreach (var vertex in Vertices)
-                {
                     foreach (var neighbour in Neighbours(vertex))
-                    {
                         yield return  new E() {From = vertex, To = neighbour};
-                    }
-                }
             }
-        } 
+        }
 
         public bool ContainsVertex(V vertex) => AdjacencyList.ContainsKey(vertex);
 
