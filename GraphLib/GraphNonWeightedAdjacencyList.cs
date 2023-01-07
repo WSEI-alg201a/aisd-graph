@@ -4,7 +4,7 @@ using System.Collections.Generic;
 namespace kmolenda.aisd.GraphLib
 {
     /// <summary>
-    /// Unidirected, strict (without multi-edges), non-weighted graph, implemented as adjacency list. 
+    /// Undirected, strict (without multi-edges), non-weighted graph, implemented as adjacency list. 
     /// Self-connections allowed.
     /// </summary>
     /// <typeparam name="V">type of vertex</typeparam>
