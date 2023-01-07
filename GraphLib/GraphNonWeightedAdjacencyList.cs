@@ -87,5 +87,9 @@ namespace kmolenda.aisd.GraphLib
         {
             throw new NotImplementedException();
         }
+
+        public bool ContainsEdge(IEdge<V> edge) =>
+            ContainsVertex(edge.From) && AdjacencyList[edge.From].Contains(edge.To);
+        
     }
 }
