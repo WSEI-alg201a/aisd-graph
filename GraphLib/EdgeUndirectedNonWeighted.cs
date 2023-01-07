@@ -10,8 +10,7 @@ namespace kmolenda.aisd.GraphLib
     /// <typeparam name="V">vertex - typ wierzchołka grafu</typeparam>
     public class EdgeUndirectedNonWeighted<V> : EdgeNonWeighted<V>, IEquatable<EdgeUndirectedNonWeighted<V>>
     {     
-        //public EdgeUndirectedNonWeighted() : base() {}
-        // komentujemy, ponieważ nie chcemy tworzyć krawędzi bez wierzchołków
+        public EdgeUndirectedNonWeighted() : base() {}
 
         public EdgeUndirectedNonWeighted(V from, V to) : base(from, to) {}
         

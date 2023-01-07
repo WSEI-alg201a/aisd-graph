@@ -11,9 +11,8 @@ namespace kmolenda.aisd.GraphLib
         public V From { get; set; }
         public V To { get; set; }
         
-        // public EdgeNonWeighted() { From = default; To = default; }
-        // komentujemy, ponieważ nie chcemy tworzyć krawędzi bez wierzchołków
-
+        public EdgeNonWeighted() : this(default, default) { }
+        
         public EdgeNonWeighted(V from, V to)
         {
             if(from == null || to == null)
