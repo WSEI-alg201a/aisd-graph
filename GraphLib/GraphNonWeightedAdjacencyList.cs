@@ -54,8 +54,7 @@ namespace kmolenda.aisd.GraphLib
                 return true;
             }
             return false;
-        }
-        
+        }        
         #endregion === Add vertices, edges ===
 
         public IEnumerable<V> Vertices => AdjacencyList.Keys;
@@ -74,18 +73,10 @@ namespace kmolenda.aisd.GraphLib
 
         public IEnumerable<V> Neighbours(V vertex) => AdjacencyList[vertex];
 
-        public bool RemoveVertex(V vertex)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool RemoveEdge(IEdge<V> edge)
-        {
-            throw new NotImplementedException();
-        }
-
-        public bool ContainsEdge(IEdge<V> edge) =>
-            ContainsVertex(edge.From) && AdjacencyList[edge.From].Contains(edge.To);
+        public bool RemoveVertex(V vertex) => throw new NotImplementedException();
         
+        public bool RemoveEdge(IEdge<V> edge) => throw new NotImplementedException();
+        public bool ContainsEdge(IEdge<V> edge) =>
+            ContainsVertex(edge.From) && AdjacencyList[edge.From].Contains(edge.To);        
     }
 }
