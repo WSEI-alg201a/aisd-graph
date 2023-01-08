@@ -23,7 +23,7 @@ namespace ConsoleApp
 
             EdgeUndirectedNonWeighted<int>[] edges = { (1, 1), (1, 2), (1, 3), (2, 4), (3, 5), (3, 6), (4, 7), (5, 7), (5, 8), (5, 6), (8, 9), (9, 10) };
 
-            var graph = new GraphNonWeightedAdjacencyList<int, EdgeNonWeighted<int>>(vertices, edges);
+            var graph = new GraphNonWeightedAdjacencyList<int, EdgeUndirectedNonWeighted<int>>(vertices, edges);
             Console.WriteLine("Graf: " + graph.ToString<int>());
 
             Console.WriteLine("Wierzchołki: " + string.Join(", ", graph.Vertices));
